@@ -1,5 +1,14 @@
-import { render } from 'preact'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 import './index.css'
-import { App } from './app.tsx'
 
-render(<App />, document.getElementById('app')!)
+const container = document.getElementById('app')
+if (!container) throw new Error('Element #app not found')
+
+const root = ReactDOM.createRoot(container)
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
